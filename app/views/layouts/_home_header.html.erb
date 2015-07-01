@@ -1,0 +1,38 @@
+<nav class="navbar navbar-default">
+	<div class="container-fluid">
+		 <a class="navbar-brand" href="#">Odinbook</a>
+
+	 <div class="nav navbar-nav navbar-right login">
+	   <%= form_for(:user, :url => session_path(:user)) do |f| %>
+		  <div class="row">
+			 <div class="col-md-4">
+			   <%= f.label :email, class: "login-label" %>
+			   <%= f.email_field :email, class: "form-control login-input" %>
+        </div>
+
+        <div class="col-md-4">
+			   <%= f.label :password, class: "login-label" %>
+			   <%= f.password_field :password, class: "form-control login-input" %>
+        </div>
+
+        <div class="col-md-2 login-btn-pos ">
+			   <%= f.submit "Log in", class: "btn btn-primary login-btn" %>
+        </div>
+		  </div>
+
+      <div class="row">
+
+        <div class="col-md-4">
+		      <%= f.check_box :remember_me %>
+		      <%= f.label :remember_me, "Keep me logged in", class: "login-label" %>
+        </div>
+        <div class="col-md-4">
+		      <%= link_to "Forgot your password?", new_password_path(resource_name), class: "login-link" %>
+        </div>
+      </div>
+
+	   <% end %>
+		</div>
+
+	</div>
+</nav>
